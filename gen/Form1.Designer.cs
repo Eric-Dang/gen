@@ -29,23 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.comboBox_SelectFile = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_TargetDir = new System.Windows.Forms.ComboBox();
             this.buttonCom = new System.Windows.Forms.Button();
             this.buttonDec = new System.Windows.Forms.Button();
+            this.textBoxSelectFile = new System.Windows.Forms.TextBox();
+            this.textBoxTargetDir = new System.Windows.Forms.TextBox();
+            this.buttonSelectFile = new System.Windows.Forms.Button();
+            this.buttonTargetDir = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // comboBox_SelectFile
-            // 
-            this.comboBox_SelectFile.FormattingEnabled = true;
-            this.comboBox_SelectFile.Location = new System.Drawing.Point(98, 18);
-            this.comboBox_SelectFile.Name = "comboBox_SelectFile";
-            this.comboBox_SelectFile.Size = new System.Drawing.Size(225, 20);
-            this.comboBox_SelectFile.TabIndex = 0;
-            this.comboBox_SelectFile.Text = "输入文件名";
-            this.comboBox_SelectFile.Click += new System.EventHandler(this.OnInputComboBoxClick);
             // 
             // label1
             // 
@@ -64,16 +56,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "输出";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // comboBox_TargetDir
-            // 
-            this.comboBox_TargetDir.FormattingEnabled = true;
-            this.comboBox_TargetDir.Location = new System.Drawing.Point(98, 54);
-            this.comboBox_TargetDir.Name = "comboBox_TargetDir";
-            this.comboBox_TargetDir.Size = new System.Drawing.Size(225, 20);
-            this.comboBox_TargetDir.TabIndex = 2;
-            this.comboBox_TargetDir.Text = "输入文件夹名";
-            this.comboBox_TargetDir.Click += new System.EventHandler(this.OnOutputComboBoxClick);
             // 
             // buttonCom
             // 
@@ -95,34 +77,80 @@
             this.buttonDec.UseVisualStyleBackColor = true;
             this.buttonDec.Click += new System.EventHandler(this.OnDecButtonClick);
             // 
+            // textBoxSelectFile
+            // 
+            this.textBoxSelectFile.Location = new System.Drawing.Point(61, 18);
+            this.textBoxSelectFile.Name = "textBoxSelectFile";
+            this.textBoxSelectFile.Size = new System.Drawing.Size(247, 21);
+            this.textBoxSelectFile.TabIndex = 5;
+            this.textBoxSelectFile.Text = "输入文件名";
+            this.textBoxSelectFile.Click += new System.EventHandler(this.OnTextBoxSelectFileClick);
+            this.textBoxSelectFile.TextChanged += new System.EventHandler(this.OnTextBoxSelectFileChanged);
+            // 
+            // textBoxTargetDir
+            // 
+            this.textBoxTargetDir.Location = new System.Drawing.Point(61, 54);
+            this.textBoxTargetDir.Name = "textBoxTargetDir";
+            this.textBoxTargetDir.Size = new System.Drawing.Size(247, 21);
+            this.textBoxTargetDir.TabIndex = 6;
+            this.textBoxTargetDir.Text = "输入文件夹名";
+            this.textBoxTargetDir.Click += new System.EventHandler(this.OnTextBoxTargetDirClick);
+            this.textBoxTargetDir.TextChanged += new System.EventHandler(this.OnTextBoxTargetDirChanged);
+            // 
+            // buttonSelectFile
+            // 
+            this.buttonSelectFile.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonSelectFile.Location = new System.Drawing.Point(306, 18);
+            this.buttonSelectFile.Name = "buttonSelectFile";
+            this.buttonSelectFile.Size = new System.Drawing.Size(31, 23);
+            this.buttonSelectFile.TabIndex = 7;
+            this.buttonSelectFile.Text = "...";
+            this.buttonSelectFile.UseVisualStyleBackColor = true;
+            this.buttonSelectFile.Click += new System.EventHandler(this.OnInputButtonClick);
+            // 
+            // buttonTargetDir
+            // 
+            this.buttonTargetDir.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonTargetDir.Location = new System.Drawing.Point(306, 54);
+            this.buttonTargetDir.Name = "buttonTargetDir";
+            this.buttonTargetDir.Size = new System.Drawing.Size(31, 23);
+            this.buttonTargetDir.TabIndex = 8;
+            this.buttonTargetDir.Text = "...";
+            this.buttonTargetDir.UseVisualStyleBackColor = true;
+            this.buttonTargetDir.Click += new System.EventHandler(this.OnOutputButtonClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(349, 126);
+            this.Controls.Add(this.buttonTargetDir);
+            this.Controls.Add(this.buttonSelectFile);
+            this.Controls.Add(this.textBoxTargetDir);
+            this.Controls.Add(this.textBoxSelectFile);
             this.Controls.Add(this.buttonDec);
             this.Controls.Add(this.buttonCom);
-            this.Controls.Add(this.comboBox_TargetDir);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox_SelectFile);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "小工具";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox_SelectFile;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox_TargetDir;
         private System.Windows.Forms.Button buttonCom;
         private System.Windows.Forms.Button buttonDec;
+        private System.Windows.Forms.TextBox textBoxSelectFile;
+        private System.Windows.Forms.TextBox textBoxTargetDir;
+        private System.Windows.Forms.Button buttonSelectFile;
+        private System.Windows.Forms.Button buttonTargetDir;
     }
 }
 

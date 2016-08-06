@@ -31,14 +31,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LZ4Sharp">
-      <HintPath>..\LZ4Sharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,6 +56,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="lz4\ILZ4Compressor.cs" />
+    <Compile Include="lz4\ILZ4Decompressor.cs" />
+    <Compile Include="lz4\LZ4.cs" />
+    <Compile Include="lz4\LZ4Compressor32.cs" />
+    <Compile Include="lz4\LZ4Compressor64.cs" />
+    <Compile Include="lz4\LZ4CompressorFactory.cs" />
+    <Compile Include="lz4\LZ4Decompressor32.cs" />
+    <Compile Include="lz4\LZ4Decompressor64.cs" />
+    <Compile Include="lz4\LZ4DecompressorFactory.cs" />
+    <Compile Include="lz4\LZ4Util.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -87,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <Content Include="lz4\LZ4.h" />
+    <Content Include="lz4\LZ4Compressor.c" />
+    <Content Include="lz4\LZ4Decompressor.c" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
